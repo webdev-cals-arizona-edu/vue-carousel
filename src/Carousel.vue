@@ -392,9 +392,12 @@
        */
       /* istanbul ignore next */
       handleMousedown(e) {
-
+        if (!e.touches) { e.preventDefault() }
+        
         this.mousedown = true
         this.dragStartX = ("ontouchstart" in window) ? e.touches[0].clientX : e.clientX
+        
+        return
       },
       /**
        * Trigger actions when mouse is released
@@ -403,6 +406,8 @@
       handleMouseup() {
         this.mousedown = false
         this.dragOffset = 0
+        
+        return
       },
       /**
        * Trigger actions when mouse is pressed and then moved (mouse drag)
@@ -425,6 +430,8 @@
           this.handleMouseup()
           this.advancePage("backward")
         }
+        
+        return
       },
       /**
        * Re-compute the width of the carousel and its slides
