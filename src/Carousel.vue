@@ -394,7 +394,7 @@
       handleMousedown(e) {
         if (!e.touches) { e.preventDefault() }
 
-        this.mousedown = true
+        this.mousedown = false
         this.dragStartX = ("ontouchstart" in window) ? e.touches[0].clientX : e.clientX
       },
       /**
