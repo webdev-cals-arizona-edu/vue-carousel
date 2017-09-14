@@ -393,7 +393,7 @@
       /* istanbul ignore next */
       handleMousedown(e) {
 
-        this.mousedown = false
+        this.mousedown = true
         this.dragStartX = ("ontouchstart" in window) ? e.touches[0].clientX : e.clientX
       },
       /**
